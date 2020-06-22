@@ -16,7 +16,7 @@ jobs:
         uses: Borales/action-yarn@v2.1.0
         with:
           # Yarn command
-            cmd: install  # npm install / yarn install
+            cmd: install  # npm install / yarn install-
       - name: Creating build
         run: yarn build
       - name: Installation surge
