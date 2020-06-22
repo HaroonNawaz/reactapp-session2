@@ -7,13 +7,13 @@ jobs:
     name: Deploying to surge
       
     steps:
-      - uses: action/checkout@v2
+      - uses: actions/checkout@v2
       - name: Install Node.js
         uses: actions/setup-node@v2-beta
         with:
           node-version: 12
       - name: GitHub Action for Yarn
-        uses: Borales/action-yarn@v2.1.0
+        uses: Borales/actions-yarn@v2.1.0
         with:
           # Yarn command
             cmd: install  # npm install / yarn install
@@ -22,4 +22,4 @@ jobs:
       - name: Installation surge
         run: npm install -g surge      
       - name: Run surge / deploying on surge
-        run: surge ./build hn-reactapp-session2.surge.sh --token $ {{ secrets.SURGE_TOKEN}}  
+        run: surge ./build hn-reactapp-session2.surge.sh --token $ {{secrets.SURGE_TOKEN}}  
